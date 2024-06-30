@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.task-input-container,
+.task-list-container {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.task-input-container form {
+  display: flex;
+  gap: 10px;
+}
+
+.task-input-container input[type="text"] {
+  flex: 1;
+  padding: 15px;
+  border: 2px solid #ddd;
+  border-radius: 25px;
+  transition: border-color 0.3s ease;
+}
+
+.task-input-container input[type="text"]:focus {
+  border-color: #6e8efb;
+  outline: none;
+}
+
+.task-input-container button {
+  padding: 15px 20px;
+  border: none;
+  background-color: #6e8efb;
+  color: white;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.task-input-container button:hover {
+  background-color: #4a63f1;
+}
+
+.task-list-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  counter-reset: task-counter;
+}
+
+.task-list-container li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f4f4f4;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.task-list-container li::before {
+  content: counter(task-counter) ". ";
+  counter-increment: task-counter;
+  font-weight: 700;
+  color: #6e8efb;
+  position: absolute;
+  left: -30px;
+}
+
+.task-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.delete-button,
+.edit-button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  color: white;
+}
+
+.delete-button {
+  background-color: #ff6b6b;
+}
+
+.delete-button:hover {
+  background-color: #e63946;
+}
+
+.edit-button {
+  background-color: #38b000;
+}
+
+.edit-button:hover {
+  background-color: #278000;
+}
